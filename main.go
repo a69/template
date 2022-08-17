@@ -7,13 +7,12 @@ import (
 	"text/template"
 )
 
-var (
-	templateFile = flag.String("t", "template.html", "template file")
-	bodyFile     = flag.String("b", "body.html", "body file")
-	outputFile   = flag.String("o", "output.html", "output file")
-)
-
 func main() {
+	templateFile := flag.String("t", "template.html", "template file")
+	bodyFile := flag.String("b", "body.html", "body file")
+	outputFile := flag.String("o", "output.html", "output file")
+	flag.Parse()
+
 	templateText, err := ioutil.ReadFile(*templateFile)
 	if err != nil {
 		panic(err)
